@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Tracker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center">Investment Portfolio Tracker</h1>
+
+      <div class="mt-5 header-info">
+        <div class="projected-value text-center">
+          <strong>
+            Projected&nbsp;Value:
+            <span class="text-danger" id="total-amount">₹0</span>
+          </strong>
+        </div>
+
+        <div class="text-center monthly-contribution">
+          <strong
+            >Monthly&nbsp;Contribution:
+            <span class="text-danger" id="total-monthly">₹0</span></strong
+          >
+        </div>
+      </div>
+
+      <form id="investment-form">
+        <label for="type">Investment Type:</label>
+        <select id="type">
+          <option value="EPF">EPF</option>
+          <option value="PPF">PPF</option>
+          <option value="Mutual Fund">Mutual Fund</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <div id="custom-type-field" style="display: none">
+          <label for="custom-type">Enter Custom Type:</label>
+          <input type="text" id="custom-type" />
+        </div>
+
+        <label for="amount">Monthly Contribution (₹):</label>
+        <input type="number" id="amount" required />
+
+        <label for="rate">Expected Annual Return (%):</label>
+        <input type="number" id="rate" step="0.01" required />
+
+        <label for="duration">Duration (Years):</label>
+        <input type="number" id="duration" required />
+
+        <div class="mt-4 mx-auto align-center d-flex">
+          <button type="submit" class="btn-success">Add Investment</button>
+          <button type="reset" class="mx-2 btn-danger">Reset</button>
+        </div>
+      </form>
+
+      <div id="results" style="display: none">
+        <h2>Investment Summary</h2>
+        <ul id="investment-list"></ul>
+      </div>
+
+      <canvas
+        id="growth-chart"
+        style="display: none; max-width: 100%; height: 400px"
+      ></canvas>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
