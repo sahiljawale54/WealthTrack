@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Tracker</title>
+    <title>WealthTrack</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -38,17 +38,21 @@
         <select id="type">
           <option value="EPF">EPF</option>
           <option value="PPF">PPF</option>
+          <option value="NPS">NPS</option>
           <option value="Mutual Fund">Mutual Fund</option>
           <option value="Other">Other</option>
         </select>
 
         <div id="custom-type-field" style="display: none">
-          <label for="custom-type">Enter Custom Type:</label>
+          <label for="custom-type">Custom Type:</label>
           <input type="text" id="custom-type" />
         </div>
 
         <label for="amount">Monthly Contribution (₹):</label>
         <input type="number" id="amount" required />
+
+        <label for="Step-Up">Yearly Step-Up (%):</label>
+        <input type="number" id="Step-Up" step="0.01" required />
 
         <label for="rate">Expected Annual Return (%):</label>
         <input type="number" id="rate" step="0.01" required />
